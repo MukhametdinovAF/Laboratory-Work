@@ -5,13 +5,13 @@ public class Example1 {
     private String pole2;
     public void getAnyThing (char a){
         this.pole1 = a;
+        System.out.println(a);
     }
     public void getAnyThing (String slovo){
         this.pole2=slovo;
         System.out.println(slovo);
     }
     public void getAnyThing(char[]array){
-        this.pole2 = toString();
         System.out.println(array);
     }
 }
