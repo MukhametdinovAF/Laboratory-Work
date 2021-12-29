@@ -1,6 +1,6 @@
 package Osnovi;
 
-import java.sql.SQLOutput;
+
 import java.util.Scanner;
 
 public class Laboratory_work_3 {
