@@ -1,7 +1,6 @@
 package Programming.laba6.hometask4;
 
 public class Example4 {
-    private int n;
 
     public static void doubleFactorial(int n) {
         int result = 1;
@@ -16,11 +15,20 @@ public class Example4 {
             result=1;
         }
     }
-    public static int doubleFactorialRecursion(int n){
-        int res;
-        res = (n - 2) * (doubleFactorialRecursion(n));
-        return res;
-            }
+     public static int fact(int n){
+        int result=1;
+        if (n==2||n==0){
+            return 1;
+        }
+        if (n<0){
+            return 1;
+        }
+        if(n%2==0){
+            result =n*fact(n-2);
+        }
+        else result = n*fact(n-2);
+        return result;
+    }
     }
 
 
