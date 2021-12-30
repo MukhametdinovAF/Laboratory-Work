@@ -17,16 +17,13 @@ public class Example4 {
     }
      public static int fact(int n){
         int result=1;
-        if (n==2||n==0){
+        if (n%2==0 & n==2){
+            return 2;
+        }
+        if (n<=0){
             return 1;
         }
-        if (n<0){
-            return 1;
-        }
-        if(n%2==0){
-            result =n*fact(n-2);
-        }
-        else result = n*fact(n-2);
+        result = n*fact(n-2);
         return result;
     }
     }
