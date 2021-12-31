@@ -9,13 +9,11 @@ public static int sumSquaring(int n){
     return sum;
 }
 public static int sumSquaringRec(int n) {
-    int res;
-    if(n==1){
-        return 1;
-    }
-
-    res =(n+1)*sumSquaringRec(n-1);
+    if(n==1||n<0) return 1;
+    int res=0;
+    res =n*n+sumSquaringRec(n-1);
     return res;
 }
 }
 
+//(n * ( n + 1 ) * ( 2n + 1 ) ) / 6
