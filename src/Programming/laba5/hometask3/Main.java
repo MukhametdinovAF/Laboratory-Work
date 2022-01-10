@@ -8,5 +8,7 @@ public class Main {
         human1.sayAge();
         human2.sayAgeAndHeight();
         human3.sayAgeNameAndHeight();
+        human1.setAge(34);
     }
 }
+

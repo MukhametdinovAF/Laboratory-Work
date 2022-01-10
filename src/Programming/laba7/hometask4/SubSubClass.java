@@ -1,0 +1,14 @@
+package Programming.laba7.hometask4;
+
+public class SubSubClass extends SubClass{
+    public int num1;
+
+    public SubSubClass(char ch1) {
+        super(ch1);
+    }
+
+    public SubSubClass(char ch1, String str1, int num1) {
+        super(ch1, str1);
+        this.num1 = num1;
+    }
+}

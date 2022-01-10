@@ -5,6 +5,5 @@ public class Main {
 
         Example4.doubleFactorial(4);
         System.out.println(Example4.fact(4));
-
     }
 }

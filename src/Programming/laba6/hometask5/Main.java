@@ -5,5 +5,4 @@ public class Main {
         System.out.println("Результат: " +Example5.sumSquaring(3));
         System.out.println("Результат: " +Example5.sumSquaringRec(3));
     }
-
 }

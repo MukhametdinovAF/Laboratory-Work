@@ -20,6 +20,10 @@ public class Constructors {
         this.name = name;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public Constructors() {
     }
     public void sayAgeAndHeight () {
