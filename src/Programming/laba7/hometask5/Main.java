@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         SuperClass spc = new SuperClass("Привет");
         SubClass1 sbc1 = new SubClass1("Hello",5);
-        SubClass2 sbc2 = new SubClass2("World",'c');
+        SubClass2 sbc2 = new SubClass2("World",'d');
         String superClassName = spc.toString();
         System.out.println(superClassName);
         String subClass1Name = sbc1.toString();
