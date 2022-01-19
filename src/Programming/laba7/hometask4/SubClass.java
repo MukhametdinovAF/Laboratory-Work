@@ -11,4 +11,9 @@ public class SubClass extends SuperClass {
         super(ch1);
         this.str1 = str1;
     }
+
+    public SubClass (SubClass clone){
+        this(clone.ch1, clone.str1);
+
+    }
 }

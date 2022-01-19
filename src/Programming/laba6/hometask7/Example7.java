@@ -5,7 +5,7 @@ public class Example7 {
         int []arrayInt=new int[charArray.length];
         for (int i =0; i< arrayInt.length;i++){
             arrayInt[i]=charArray[i];
-            System.out.print(arrayInt[i]+",");
+            System.out.print(arrayInt[i]+" ");
         }
         return arrayInt;
     }

@@ -15,7 +15,7 @@ public class Example3 {
         }
         System.out.println("Последовательность Фибоначчи для первых "+fib +" чисел:");
         for (int j : arr) {
-            System.out.println(j);
+            System.out.print(j+" ");
         }
     }
 }

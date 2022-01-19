@@ -2,6 +2,15 @@ package Programming.laba7.hometask4;
 
 public class Main {
     public static void main(String[] args) {
+        SuperClass spc = new SuperClass('a');
+        SubClass sbc = new SubClass('s',"Hello");
+        SubSubClass ssc = new SubSubClass('d',"World",5);
+        SuperClass cloneSpc = new SuperClass(spc);
+        SubClass cloneSbc = new SubClass(sbc);
+        SubSubClass cloneSsc = new SubSubClass(ssc);
+
+
+
 
     }
 }

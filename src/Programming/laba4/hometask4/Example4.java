@@ -6,8 +6,7 @@ public class Example4 {
         System.out.println("Введите размер массива: ");
         Scanner scan = new Scanner(System.in);
         int x = scan.nextInt();
-        int y = x;
-        int[][] array = new int[x][y];
+        int[][] array = new int[x][x];
         int i;
         int j;
         for (i = 0; i < array.length; i++) {
