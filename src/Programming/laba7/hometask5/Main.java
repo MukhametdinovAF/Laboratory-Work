@@ -11,9 +11,7 @@ public class Main {
         System.out.println(subClass1Name);
         String subClass2Name = sbc2.toString();
         System.out.println(subClass2Name);
-
     }
-
 }
 //        Напишите программу, в которой есть суперкласс с защищенным текстовым полем,
 //        конструктор с текстовым параметром и метод, при вызове которого в консольном окне

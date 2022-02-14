@@ -11,9 +11,7 @@ public class Main {
     System.out.println(subClassName);
     String subSubClassName = ssbc.toString();
     System.out.println(subSubClassName);
-
     }
-
 }
 //        Напишите программу, в которой на основе суперкласса создается подкласс, а на
 //        основе этого подкласса создается еще один подкласс (цепочка наследования из трех

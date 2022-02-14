@@ -15,7 +15,4 @@ public class SubSubClass extends SubClass{
     public SubSubClass (SubSubClass clone){
         this(clone.ch1, clone.str1, clone.num1);
     }
-
-
-
 }

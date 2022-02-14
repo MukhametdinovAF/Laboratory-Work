@@ -8,10 +8,6 @@ public class Main {
         SuperClass cloneSpc = new SuperClass(spc);
         SubClass cloneSbc = new SubClass(sbc);
         SubSubClass cloneSsc = new SubSubClass(ssc);
-
-
-
-
     }
 }
 //        Напишите программу, в которой использована цепочка наследования из трех
