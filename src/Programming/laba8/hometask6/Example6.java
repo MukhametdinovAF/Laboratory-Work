@@ -13,9 +13,7 @@ public class Example6 {
         this.next = next;
     }
 
-    public Example6() {
 
-    }
 
     public void createHead(Example6 node) {
         Example6 head = new Example6(0, null);
@@ -46,10 +44,6 @@ public class Example6 {
 
 
     public String toString(Example6 node){
-        String ElementsOfNode =null;
-
-
-
         return null;
         }
 
@@ -193,9 +187,23 @@ public class Example6 {
         }
 
     }
-    public void createHeadRec(){
+    public void createHeadRec(Example6 node){
+        Example6 head = new Example6(value, null);
+        Example6 tail = head;
+        if(value>0){
+            tail.next = new Example6(value+1, null);
+            tail = tail.next;
+            value--;
+            createHeadRec(node);
 
+        }
+        Example6 ref =head;
+        while (ref != null) {
+            System.out.print(" " + ref.value);
+            ref = ref.next;
+        }
     }
+
     public void createTailRec(){
 
     }
