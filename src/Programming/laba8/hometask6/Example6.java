@@ -23,11 +23,11 @@ public class Example6 {
             tail.next = new Example6(i + 1, null);
             tail = tail.next;
         }
-        Example6 ref = head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
-        }
+//        Example6 ref = head;
+//        while (ref != null) {
+//            System.out.print(" " + ref.value);
+//            ref = ref.next;
+//        }
         }
 
     public void createTail(Example6 node){
@@ -42,10 +42,29 @@ public class Example6 {
         }
             }
 
+    @Override
+    public String toString() {
+        return "Example6{" +
+                "value=" + value +
+                ", next=" + next +
+                '}';
+    }
 
-    public String toString(Example6 node){
-        return null;
+    public void toString(Example6 node) {
+
+        Example6 head = new Example6(0, null);
+        Example6 tail = head;
+
+        for (int i = 0; i < value; i++) {
+            tail.next = new Example6(i + 1, null);
+            tail = tail.next;
         }
+        Example6 ref = head;
+        while (ref != null) {
+            System.out.print(" "+ref.value);
+            ref = ref.next;
+        }
+    }
 
 
 
@@ -206,7 +225,7 @@ public class Example6 {
 
     public void createTailRec(Example6 node){
         Example6 head = null;
-        if(value>0){
+        if(value>=0){
             head = new Example6(value,head);
             value--;
             createTailRec(node);
@@ -217,8 +236,35 @@ public class Example6 {
             ref = ref.next;
         }
     }
-    public String toStringRec(){
-        return null;
+    public void toStringRec(Example6 node){
+        Example6 head = null;
+        if(value>=0){
+            head = new Example6(value,head);
+            value--;
+            toStringRec(node);
+        }
+        Example6 ref = head;
+        while (ref != null) {
+            System.out.print(" " + ref.value);
+            ref = ref.next;
+        }
+    }
+
+    public int getLength(Example6 node){
+        int length=0;
+        Example6 head = new Example6(value,null);
+        Example6 tail = head;
+
+        for (int i = 0; i < value; i++) {
+            tail.next = new Example6(i + 1, null);
+            tail = tail.next;
+        }
+        Example6 ref=head;
+        while(ref.next!=null){
+            ref=ref.next;
+            length++;
+        }
+        return length;
     }
 
 
