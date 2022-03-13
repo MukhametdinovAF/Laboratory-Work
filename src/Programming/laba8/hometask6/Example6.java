@@ -204,8 +204,19 @@ public class Example6 {
         }
     }
 
-    public void createTailRec(){
-
+    public void createTailRec(Example6 node){
+        Example6 head = null;
+        if(value>0){
+//        for (int i = value; i >= 0; i--) {
+            head = new Example6(value,head);
+            value--;
+            createTailRec(node);
+        }
+        Example6 ref = head;
+        while (ref != null) {
+            System.out.print(" " + ref.value);
+            ref = ref.next;
+        }
     }
     public String toStringRec(){
         return null;
