@@ -207,7 +207,6 @@ public class Example6 {
     public void createTailRec(Example6 node){
         Example6 head = null;
         if(value>0){
-//        for (int i = value; i >= 0; i--) {
             head = new Example6(value,head);
             value--;
             createTailRec(node);
