@@ -16,11 +16,12 @@ public class Rec3 {
     public static void space() {
         for (int i = 0; i < step; i++) {
             System.out.print(" ");
-            m(1);
+
 
         }
     }
     public static void main(String[] args) {
+
         m(1);
     }
 }

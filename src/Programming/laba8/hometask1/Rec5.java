@@ -11,4 +11,10 @@ public class Rec5 {
             return f(n-2)+f(n-1);
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println(f(20));
+    }
 }
+
+
