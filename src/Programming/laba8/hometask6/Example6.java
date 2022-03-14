@@ -12,22 +12,20 @@ public class Example6 {
         this.value = value;
         this.next = next;
     }
-
-
-
+            
     public void createHead(Example6 node) {
-        Example6 head = new Example6(0, null);
+        Example6 head = new Example6(1, null);
         Example6 tail = head;
 
-        for (int i = 0; i < value; i++) {
+        for (int i = 1; i < value; i++) {
             tail.next = new Example6(i + 1, null);
             tail = tail.next;
         }
-//        Example6 ref = head;
-//        while (ref != null) {
-//            System.out.print(" " + ref.value);
-//            ref = ref.next;
-//        }
+        Example6 ref = head;
+        while (ref != null) {
+            System.out.print(" " + ref.value);
+            ref = ref.next;
+        }
         }
 
     public void createTail(Example6 node){
@@ -41,14 +39,6 @@ public class Example6 {
             ref = ref.next;
         }
             }
-
-    @Override
-    public String toString() {
-        return "Example6{" +
-                "value=" + value +
-                ", next=" + next +
-                '}';
-    }
 
     public void toString(Example6 node) {
 
@@ -266,6 +256,76 @@ public class Example6 {
         }
         return length;
     }
+    public void getLengthForThree(Example6 node){
+        Example6 head = new Example6(value,next);
+        Example6 tail = head;
+        for (int i=0;i<value;i++){
+            tail.next=new Example6(i+1,null);
+            tail=tail.next;
+        }
+        Example6 ref=head;
+        int counter=0;
+        int sum=0;
+        int middle=0;
+        while(ref.next!=null){
+            ref=ref.next;
+            if(ref.value%3==0){
+            counter++;
+            sum=sum+ref.value;
+            middle=sum/counter;
+            }
+        }
+        System.out.println("Количество чисел последовательности, делящихся на 3 = "+counter);
+        System.out.println("Сумма этих чисел = "+sum);
+        System.out.println("Среднее арифметическое этих чисел = "+middle);
+    }
+
+    public void getMinAndMaxForThree(Example6 node){
+        Example6 head = new Example6(value,next);
+        Example6 tail = head;
+        for(int i = 0; i<value; i++){
+            tail.next = new Example6(i+1,null);
+            tail = tail.next;
+        }
+        Example6 ref = head;
+        int min=0;
+        int max=0;
+        while (ref.next!=null){
+            ref=ref.next;
+            if (ref.value%3==0 && ref.value<4) {
+                min = ref.value;
+            }
+            else if (ref.value % 3 == 0 && ref.value > min) {
+                    max = ref.value;
+                }
+        }
+        ref=head;
+        Example6 setmax = new Example6(max,null);
+        Example6 setmin = new Example6(min,null);
+        System.out.println("Список элементов выглядит следующим образом ");
+        while (ref.next!=null){
+            ref=ref.next;
+
+            if (ref.value==min){
+                setmax.next=ref.next;
+                ref.next=setmax;
+break;
+            }
+            else if (ref.value==max){
+                setmin.next=ref.next;
+                ref.next=setmin;
+            }
+        }
+        Example6 refout =head;
+        while (refout.next!=null){
+            refout=refout.next;
+            System.out.print(" "+refout.value);
+        }
+
+
+    }
+
+
 
 
 
