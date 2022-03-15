@@ -196,26 +196,30 @@ public class Example6 {
         }
 
     }
+
     public void createHeadRec(Example6 node){
-        Example6 head = new Example6(value, null);
+        Example6 head = new Example6(value, next);
         Example6 tail = head;
-        if(value>0){
-            tail.next = new Example6(value+1, null);
+
+        if(value>1){
+            tail.next = new Example6(value+1, next);
             tail = tail.next;
             value--;
             createHeadRec(node);
-
         }
+
         Example6 ref =head;
         while (ref != null) {
             System.out.print(" " + ref.value);
             ref = ref.next;
+
         }
+
     }
 
     public void createTailRec(Example6 node){
         Example6 head = null;
-        if(value>=0){
+        if(value>0){
             head = new Example6(value,head);
             value--;
             createTailRec(node);
@@ -307,13 +311,15 @@ public class Example6 {
             ref=ref.next;
 
             if (ref.value==min){
+
+                ref.value=setmax.value;
                 setmax.next=ref.next;
-                ref.next=setmax;
-break;
+
             }
             else if (ref.value==max){
+                ref.value=setmin.value;
                 setmin.next=ref.next;
-                ref.next=setmin;
+
             }
         }
         Example6 refout =head;
