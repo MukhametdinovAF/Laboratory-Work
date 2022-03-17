@@ -10,7 +10,11 @@ public class Main {
         int value = in.nextInt();
         Example6 myNode = new Example6(value,null);
 
-        myNode.getMinAndMaxForThree(myNode);
+
+
+//        myNode.getMinAndMaxForThree(myNode);
+        System.out.println();
+        myNode.createHeadRec(myNode);
 
 
 
