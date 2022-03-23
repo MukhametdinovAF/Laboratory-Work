@@ -40,7 +40,15 @@ public class Example6 {
         }
             }
 
-    public void toString(Example6 node) {
+//    public String toString(){
+//        String allNumbers;
+//allNumbers=" "
+//    return allNumbers;
+//    }
+
+
+
+            public void toString(Example6 node) {
 
         Example6 head = new Example6(0, null);
         Example6 tail = head;

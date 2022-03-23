@@ -2,11 +2,13 @@ package Programming.laba8.hometask3;
 
 public class Example3 {
 
-    private int [] arrayField;
+    public int [] arrayField;
 
     {
         arrayField = new int[5];
     }
+
+
 
     private int x=0;
     private int i=0;
@@ -28,7 +30,9 @@ public class Example3 {
 
 
        }
-    }
+
+       }
+
 
 //        Создать приложение, позволяющее ввести и вывести
 //        одномерный массив целых чисел. Для ввода и вывода массива
