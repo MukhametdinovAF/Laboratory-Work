@@ -1,19 +1,18 @@
 package Programming.laba9.task1;
 
 public class Example13 {
-    public class Except6 {
         public static void main(String[] args) {
-            try {
-                int l = args.length;
-                System.out.println("размер массива= " + l);
-                int h=10/l;
+            try { // запуск обработчика исключений
+                int l = args.length; // ввод переменной l равной величине массива
+                System.out.println("размер массива= " + l); // вывод информации, что l=0
+                int h=10/l; // ввод переменной h, которая вычисляется путем деления 10 на l
                 args[l + 1] = "10";
-            } catch (ArithmeticException e) {
-                System.out.println("Деление на ноль");
-            }catch (ArrayIndexOutOfBoundsException e) {
+            } catch (ArithmeticException e) { // блок перехватывает исключение, вызванное делением на ноль
+                System.out.println("Деление на ноль"); // выводится сообщение, что ошибка перехвачена обработчиком
+            }catch (ArrayIndexOutOfBoundsException e) { //этот блок не выводится, так как ошибка перехвачена предыдущим блоком
                 System.out.println("Индекс не существует");
             }
         }
     }
 
-}
+

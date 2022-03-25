@@ -19,6 +19,7 @@ public class ArrayExceptions {
     public void setArrayOfInts(int[] arrayOfInts) {
         ArrayOfInts = arrayOfInts;
     }
+    // метод для создания массива заданного размера с подсчетом среднего значения всех его элементов
     public void GetNewArray (int ArrayLength) {
         this.ArrayLength = ArrayLength;
         ArrayOfInts = new int[ArrayLength];
@@ -26,6 +27,7 @@ public class ArrayExceptions {
             ArrayOfInts[i] = i;
             System.out.print(" " + ArrayOfInts[i]);
         }
+        // счетчик суммы элементов массива
         int counter = 0;
         for (int i = 0; i < ArrayOfInts.length; i++) {
             counter = counter + ArrayOfInts[i];
@@ -34,3 +36,4 @@ public class ArrayExceptions {
         System.out.println("Среднее значение среди элементов массива равно: " + counter / ArrayOfInts.length);
     }
 }
+

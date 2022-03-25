@@ -12,7 +12,7 @@ public class MatrixExceptions {
     public void setI(int i) {
         this.i = i;
     }
-
+    // метод создания двумерного массива с одинаковой высотой и шириной
     public void GetNewMatrix(int i){
         this.i=i;
         Matrix=new int[i][i];
@@ -20,6 +20,15 @@ public class MatrixExceptions {
             for (int k=0;k<Matrix.length;k++){
                 Matrix[j][k]=k;
                 System.out.print(Matrix[j][k]);
+            }
+            System.out.println();
+        }
+    }
+    // метод, позволяющий вывести столбец из массива под номером введенным с клавиатуры
+    public void OutColumn (int number){
+        for (int j=0;j<Matrix.length;j++){
+            for(int k=number;k<=number;k++){
+                System.out.println(Matrix[j][k]);
             }
         }
     }
