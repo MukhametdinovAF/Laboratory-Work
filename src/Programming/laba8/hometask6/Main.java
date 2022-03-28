@@ -51,7 +51,7 @@ public class Main {
 
 //      // Ввод с головы помощью рекурсии:
 
-//        Example6 head=new Example6(0,null);
+//        Example6 head=new Example6(value,null);
 //        Example6 tail = head;
 //        Example6.createHeadRec(head,tail,value);
 //        Example6.toStringMethod("CreateHeadRec",head);
