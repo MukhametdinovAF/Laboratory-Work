@@ -39,8 +39,8 @@ public class Main {
 //        Example6.createHeadRec(head,tail,value);
 //        Example6.toStringMethod("CreateHeadRec",head);
 //      // Ввод с хвоста с помощью рекурсии:
-        Example6 head=null;
-        Example6.createTailRec(head,value);
+
+        Example6 head=Example6.createTailRec(null,value);
         Example6.toStringMethod("CreateTailRec",head);
     }
 }
