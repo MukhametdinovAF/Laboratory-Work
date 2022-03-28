@@ -8,229 +8,107 @@ public class Example6 {
 
 
 
+
     public Example6(int value, Example6 next) {
         this.value = value;
         this.next = next;
     }
             
-    public void createHead(Example6 node) {
+    public static Example6 createHead(int size) {
         Example6 head = new Example6(1, null);
         Example6 tail = head;
 
-        for (int i = 1; i < value; i++) {
+        for (int i = 1; i < size; i++) {
             tail.next = new Example6(i + 1, null);
             tail = tail.next;
         }
-        Example6 ref = head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
-        }
-        }
+        return head;
+    }
 
-    public void createTail(Example6 node){
+    public static Example6 createTail(int size){
               Example6 head = null;
-            for (int i = value; i >= 0; i--) {
+            for (int i = size; i >0; i--) {
                 head = new Example6(i,head);
         }
+        return head;
+    }
+
+    public static void toStringMethod(String Message, Example6 head){
         Example6 ref = head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
-        }
-            }
-
-//    public String toString(){
-//        String allNumbers;
-//allNumbers=" "
-//    return allNumbers;
-//    }
-
-
-
-            public void toString(Example6 node) {
-
-        Example6 head = new Example6(0, null);
-        Example6 tail = head;
-
-        for (int i = 0; i < value; i++) {
-            tail.next = new Example6(i + 1, null);
-            tail = tail.next;
-        }
-        Example6 ref = head;
-        while (ref != null) {
-            System.out.print(" "+ref.value);
-            ref = ref.next;
+        System.out.println(Message);
+        while(ref!=null){
+            System.out.println("value= "+ ref.value);
+            ref=ref.next;
         }
     }
 
-
-
-    public void AddFirst(int val) {
-        Example6 head = new Example6(0, null);
-        Example6 tail = head;
-
-        for (int i = 0; i < value; i++) {
-            tail.next = new Example6(i + 1, null);
-            tail = tail.next;
-        }
-        Example6 newhead = new Example6(val, head);
-        if (head.next != null) {
-            head=newhead;
-            newhead.next = head.next;
-
-        }
-
-        Example6 ref = head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
-        }
+    public static Example6 AddFirst(Example6 head,int value) {
+        return new Example6(value,head);
     }
-    public void AddLast(int val){
-        Example6 head = new Example6(0, null);
-        Example6 tail = head;
 
-        for (int i = 0; i < value; i++) {
-            tail.next = new Example6(i + 1, null);
-            tail = tail.next;
-        }
-        Example6 newtail = new Example6(val, null);
+    public static void AddLast(Example6 head, int value){
         Example6 ref = head;
         while (ref.next != null) {
             ref = ref.next;
 
         }
-        ref.next=newtail;
-        ref=head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
-        }
+        ref.next=new Example6(value,null);
     }
 
-    public void Insert(int val,int position){
-        Example6 head = new Example6(0, null);
-        Example6 tail = head;
+    public static void Insert(Example6 head,int value,int position){
+        Example6 newposition = new Example6(value, null);
+        int index=1;
+        Example6 ref = head;
 
-        for (int i = 0; i < value; i++) {
-            tail.next = new Example6(i + 1, null);
-            tail = tail.next;
-        }
-
-        int index=0;
-        if(position>=0&&position<=value){
-            Example6 ref = head;
-            while(index!=position){
+            while(ref.next!=null&&index<position){
                 ref=ref.next;
                 index++;
             }
-            Example6 newposition = new Example6(val, null);
-            newposition.next=ref.next;
+            newposition.next=ref.next.next;
             ref.next=newposition;
         }
-        Example6 ref =head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
-        }
 
-    }
-    public void RemoveFirst(){
-        Example6 head = new Example6(0, null);
-        Example6 tail = head;
-
-        for (int i = 0; i < value; i++) {
-            tail.next = new Example6(i + 1, null);
-            tail = tail.next;
-        }
-
-        if (head.next != null) {
-            head=head.next;
-        }
-
-        Example6 ref = head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
-        }
+    public static Example6 RemoveFirst(Example6 head) {
+        head = head.next;
+        return head;
     }
 
-    public void RemoveLast(){
-        Example6 head = new Example6(0, null);
-        Example6 tail = head;
 
-        for (int i = 0; i < value; i++) {
-            tail.next = new Example6(i + 1, null);
-            tail = tail.next;
-        }
-
+    public static void RemoveLast(Example6 head) {
         Example6 ref = head;
         while (ref.next.next != null) {
             ref = ref.next;
         }
-
-        ref.next=null;
-        ref=head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
-        }
+        ref.next = null;
     }
-    public void Remove(int position){
-        Example6 head = new Example6(0, null);
-        Example6 tail = head;
-
-        for (int i = 0; i < value; i++) {
-            tail.next = new Example6(i + 1, null);
-            tail = tail.next;
-        }
-
-        int index=0;
-        if(position>=0&&index<position){
-            Example6 ref = head;
-            while(index!=position){
+    public static void Remove(Example6 head, int position){
+        int index=1;
+        Example6 ref = head;
+            while(ref.next!=null&&index<position){
                 ref=ref.next;
                 index++;
             }
 
             ref.next=ref.next.next;
-
-        }
-        Example6 ref =head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
         }
 
+    public static void createHeadRec(Example6 head,Example6 tail,int value){
+        if(head!=null) {
+            tail = head;
+        }
+        if(value!=1){
+            tail.next = new Example6(value - 1, null);
+            tail = tail.next;
+            createHeadRec(null,tail,value-1);
+        }
     }
 
-    public void createHeadRec(Example6 myNode){
-        if(value>0){
-            myNode.next=new Example6(value,next);
-            myNode=myNode.next;
-            value--;
-            createHeadRec(myNode);
+    public static Example6 createTailRec(Example6 head,int value){
+        if(value!=1){
+            head = new Example6(value + 1, null);
+            head = createTailRec(head,value-1);
         }
-        Example6 ref =myNode;
-        if (ref != null) {
-            System.out.print(" " + ref.value);
-        }
-
-    }
-
-    public void createTailRec(Example6 node){
-        Example6 head = null;
-        if(value>0){
-            head = new Example6(value, null);
-            value--;
-            createTailRec(node);
-        }
-        Example6 ref = head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
-        }
+        return head;
     }
     public void toStringRec(Example6 node){
         Example6 head = null;
