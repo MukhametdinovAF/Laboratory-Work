@@ -105,7 +105,7 @@ public class Example6 {
 
     public static Example6 createTailRec(Example6 head,int value){
         if(value!=1){
-            head = new Example6(value + 1, null);
+            head = new Example6(value, head);
             head = createTailRec(head,value-1);
         }
         return head;
