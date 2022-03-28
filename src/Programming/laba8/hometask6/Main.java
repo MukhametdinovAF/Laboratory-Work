@@ -60,6 +60,10 @@ public class Main {
 
 //        Example6 head=Example6.createTailRec(null,value);
 //        Example6.toStringMethod("CreateTailRec",head);
+
+        // Метод вывода с рекурсией:
+//        Example6.toStringRec(head,value);
+
 //        // Дополнительное задание:
 //        // Создание списка из n целых чисел:
 //        //

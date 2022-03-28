@@ -12,6 +12,8 @@ public class Example6 {
         this.next = next;
     }
 
+    // Ввод с головы:
+
     public static Example6 createHead(int size) {
         Example6 head = new Example6(1, null);
         Example6 tail = head;
@@ -23,6 +25,8 @@ public class Example6 {
         return head;
     }
 
+    // Ввод с хвоста:
+
     public static Example6 createTail(int size) {
         Example6 head = null;
         for (int i = size; i > 0; i--) {
@@ -30,6 +34,8 @@ public class Example6 {
         }
         return head;
     }
+
+    // Вывод:
 
     public static void toStringMethod(String Message, Example6 head) {
         Example6 ref = head;
@@ -40,9 +46,13 @@ public class Example6 {
         }
     }
 
+    // Добавление в начало списка:
+
     public static Example6 AddFirst(Example6 head, int value) {
         return new Example6(value, head);
     }
+
+    //Добавление в конец списка:
 
     public static void AddLast(Example6 head, int value) {
         Example6 ref = head;
@@ -52,6 +62,8 @@ public class Example6 {
         }
         ref.next = new Example6(value, null);
     }
+
+    // Вставка в указанное место:
 
     public static void Insert(Example6 head, int value, int position) {
         Example6 newposition = new Example6(value, null);
@@ -66,11 +78,14 @@ public class Example6 {
         ref.next = newposition;
     }
 
+    // Удаление первого элемента списка:
+
     public static Example6 RemoveFirst(Example6 head) {
         head = head.next;
         return head;
     }
 
+    // Удаление последнего элемента списка:
 
     public static void RemoveLast(Example6 head) {
         Example6 ref = head;
@@ -79,6 +94,8 @@ public class Example6 {
         }
         ref.next = null;
     }
+
+    // Удаление указанного элемента списка:
 
     public static void Remove(Example6 head, int position) {
         int index = 1;
@@ -91,6 +108,8 @@ public class Example6 {
         ref.next = ref.next.next;
     }
 
+    // Ввод с головы с рекурсией:
+
     public static void createHeadRec(Example6 head, Example6 tail, int value) {
         if (head != null) {
             tail = head;
@@ -102,6 +121,8 @@ public class Example6 {
         }
     }
 
+    // Ввод с хвоста с рекурсией:
+
     public static Example6 createTailRec(Example6 head, int value) {
         if (value != 0) {
             head = new Example6(value, head);
@@ -110,36 +131,16 @@ public class Example6 {
         return head;
     }
 
-    public void toStringRec(Example6 node) {
-        Example6 head = null;
-        if (value >= 0) {
-            head = new Example6(value, head);
-            value--;
-            toStringRec(node);
+    // Метод toString с рекурсией:
+
+    public static void toStringRec(Example6 head,int value) {
+        if (value > 0) {
+            toStringRec(head, value - 1);
         }
-        Example6 ref = head;
-        while (ref != null) {
-            System.out.print(" " + ref.value);
-            ref = ref.next;
-        }
+        System.out.println("value="+value);
     }
 
-    public int getLength(Example6 node) {
-        int length = 0;
-        Example6 head = new Example6(value, null);
-        Example6 tail = head;
-
-        for (int i = 0; i < value; i++) {
-            tail.next = new Example6(i + 1, null);
-            tail = tail.next;
-        }
-        Example6 ref = head;
-        while (ref.next != null) {
-            ref = ref.next;
-            length++;
-        }
-        return length;
-    }
+    // Дополнительное задание А:
 
     public static void getLengthForThree(Example6 head) {
         Example6 ref = head;
@@ -158,6 +159,8 @@ public class Example6 {
         System.out.println("Сумма этих чисел = " + sum);
         System.out.println("Среднее арифметическое этих чисел = " + middle);
     }
+
+    // Дополнительное задание Б:
 
     public static void getMinAndMaxForThree(Example6 head) {
         Example6 ref = head;
