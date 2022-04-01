@@ -115,7 +115,7 @@ public class Example6 {
             tail = head;
         }
         if (value != 1) {
-            tail.next = new Example6(value - 1, null);
+            tail.next = new Example6(value-1 , null);
             tail = tail.next;
             createHeadRec(null, tail, value - 1);
         }
