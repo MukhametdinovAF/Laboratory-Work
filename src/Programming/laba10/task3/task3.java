@@ -20,12 +20,14 @@ public class task3 {
 
         public static void main(String[] args) {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Users\\ekb-l\\IdeaProjects\\Laboratory Work\\src\\Programming\\laba10\\task3\\text1")));
-        BufferedWriter wr = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\ekb-l\\IdeaProjects\\Laboratory Work\\src\\Programming\\laba10\\task3\\text2",true)))){
+        BufferedWriter wr = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\ekb-l\\IdeaProjects\\Laboratory Work\\src\\Programming\\laba10\\task3\\text2",false)))){
             String poetry;
+            int count=1;
             while ((poetry= br.readLine())!=null){
                 String [] words = poetry.split(" ");
-                wr.write(task3.split(words));
+                wr.write(count+" "+task3.split(words));
                 wr.newLine();
+                count++;
             }
         }  catch (IOException e) {
             e.printStackTrace();
