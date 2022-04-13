@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class Files_byteRW_my2 {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
-        System.out.print("Введите имя файла => "); String
-                fname=sc.nextLine();
+        System.out.print("Введите имя файла => ");
+        String fname=sc.nextLine();
         try{
-// Создается файл
+            // Создается файл
             File f1=new File(fname);
             f1.createNewFile(); // файл создан
             System.out.println("Полный путь файла: "+ f1.getAbsolutePath());
@@ -24,7 +24,7 @@ public class Files_byteRW_my2 {
             for (int i = 0; i < n; i++) {
                 System.out.print("Введите строку для записи в файл => ");
                 String s=sc.nextLine();
-                dOut.writeUTF(s );
+                dOut.writeUTF(s);
 
                 //или dOut.writeUTF(s +"\n" ); – запись отдельных строк
 
