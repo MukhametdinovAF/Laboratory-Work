@@ -17,7 +17,7 @@ public class task3 {
                     }
                 }
             }
-            return resuilt+"выбрано слов: "+counter;
+            return resuilt+" ==> выбрано слов: "+counter;
         }
 
         public static void main(String[] args) {
