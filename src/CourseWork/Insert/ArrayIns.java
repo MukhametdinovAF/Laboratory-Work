@@ -1,7 +1,9 @@
-package Kursach.Insert;
+package CourseWork.Insert;
 
-import Kursach.Bubble.ArrayBub;
-
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.Random;
 
 public class ArrayIns {
@@ -48,6 +50,32 @@ public class ArrayIns {
                 --in; // Перейти на одну позицию влево
             }
             array[in] = temp; // Вставить помеченный элемент
+        }
+    }
+    public void WriteToTxtUnsorted() {
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\ekb-l\\IdeaProjects\\Laboratory Work\\src\\CourseWork\\FinalSorting\\Result",false)))) {
+            writer.write("Массив до сортировки:");
+            writer.write("\n");
+            for (int i = 0; i < length; i++) {
+                writer.write(String.valueOf(array[i]));
+                writer.write(" ");
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void WriteToTxtSorted(){
+        try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\ekb-l\\IdeaProjects\\Laboratory Work\\src\\CourseWork\\FinalSorting\\Result",true)))){
+            writer.write("\nМассив после сортировки:");
+            writer.write("\n");
+            for (int i =0;i<length;i++){
+                writer.write(String.valueOf(array[i]));
+                writer.write(" ");
+            }
+        }
+        catch (IOException e){
+            System.out.println(e.getMessage());
         }
     }
 

@@ -11,15 +11,17 @@ public class FilesData {
 
             File f1 = new File("D:\\My\\numIsh.txt");
             f1.createNewFile();
-            Scanner sc = new Scanner(System.in, "cp1251");
-            DataOutputStream wr = new DataOutputStream(new FileOutputStream(f1.getAbsolutePath()));
+            Scanner sc = new Scanner(System.in,"windows-1251");
+            DataOutputStream wr = new DataOutputStream(new FileOutputStream("D:\\My\\numIsh.txt"));
             System.out.println("Сколько вещественных чисел записать в файл?");
             int count = sc.nextInt();
             System.out.println("Введите числа:");
-            for (int i = 0; i < count; i++)
+
+            for (int i = 0; i < count; i++){
                 wr.writeFloat(sc.nextFloat());
                 wr.flush();
                 wr.close();
+            }
 
             // Создание файла numRez.txt и переписывание в него чисел из numIsh.txt
 
@@ -28,11 +30,11 @@ public class FilesData {
 
             // поток для чтения из исходного файла numIsh.txt
 
-            DataInputStream rd = new DataInputStream(new FileInputStream(f1.getAbsolutePath()));
+            DataInputStream rd = new DataInputStream(new FileInputStream("D:\\My\\numIsh.txt"));
 
             // поток для записи в результирующий файл numRez.txt
 
-            wr = new DataOutputStream(new FileOutputStream(f2.getAbsolutePath()));
+            wr = new DataOutputStream(new FileOutputStream("D:\\My\\numRez.txt"));
             try {
                 while (true) {
                     float number = rd.readFloat();
