@@ -1,5 +1,4 @@
-package Programming.laba10.task1.example8;
-
+package Programming.laba11.task1.example3;
 import java.io.*;
 import java.net.URL;
 
@@ -18,21 +17,21 @@ public class InConvertInText {
     public static void main(String[] args) {
         try {
             // С потоком связан файл
-//            InputStream inFile = new FileInputStream("D:\\MyFile1.txt"); // байтовый
+            InputStream inFile = new FileInputStream("D:\\MyFile1.txt"); // байтовый
 //                                                                               // поток
-//            Reader rFile= new InputStreamReader(inFile,"cp1251"); // символьный
-            Reader rFile = new InputStreamReader(new FileInputStream("D:\\\\MyFile1.txt"))  ;                                                               // поток
+            Reader rFile= new InputStreamReader(inFile,"cp1251"); // символьный
+            //Reader rFile = new InputStreamReader(new FileInputStream("D:\\\\MyFile1.txt"))  ;                                                               // поток
             //передается «русская кодировка
             readAllByByte(rFile);
             System.out.print("\n\n\n");
-//            inFile.close();
+            inFile.close();
             rFile.close();
             // С потоком связана интернет-страница
 
             InputStream inUrl = new URL("http://google.com").openStream(); // байтовый
-                                                                           // поток
+            // поток
             Reader rUrl=new InputStreamReader(inUrl, "cp1251"); // символьный
-                                                                           // поток
+            // поток
             readAllByByte(rUrl);
             System.out.print("\n\n\n");
             inUrl.close();
@@ -40,7 +39,7 @@ public class InConvertInText {
             // С потоком связан массив типа byte
             InputStream inArray = new ByteArrayInputStream( new byte[] {5, 8, 3, 9, 11});
             Reader rArray=new InputStreamReader(inArray,"cp1251" ); // символьный
-                                                                               // поток
+            // поток
             readAllByByte(rArray);
             System.out.print("\n\n\n");
             inArray.close();
@@ -50,5 +49,4 @@ public class InConvertInText {
         }
     }
 }
-
 
