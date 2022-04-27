@@ -12,8 +12,8 @@ public class RndAccFilms {
             System.out.println("Введите количество фильмов для записи в файл\n"+"=> ");
             int quantity=scanner.nextInt();
             scanner.nextLine();
-            String name,country,genre;
-            int year,rentalCost;
+            String name,country,genre,year;
+            int rentalCost;
 
             for(int i=0;i<quantity;i++){
                 System.out.println("Введите название "+(i+1)+" фильма => ");
@@ -22,24 +22,27 @@ public class RndAccFilms {
                 randomAccessFile.seek(randomAccessFile.length());
                 randomAccessFile.writeUTF(name);
                 for(int j=0;j<20-name.length();j++)
-                    randomAccessFile.writeByte(0);
+                    randomAccessFile.writeByte(1);
                 System.out.println("Введите год выпуска этого фильма => ");
-                year = scanner.nextInt();
-                randomAccessFile.writeInt(year);
+                year = scanner.next();
+                randomAccessFile.writeUTF(year);
+                for (int m=0;m<20-year.length();m++){
+                    randomAccessFile.writeByte(1);
+                }
                 scanner.nextLine();
                 System.out.println("Введите страну производства этого фильма => ");
                 country = scanner.next();
                 randomAccessFile.writeUTF(country);
                 for (int k=0;k<20-country.length();k++)
-                    randomAccessFile.writeByte(0);
+                    randomAccessFile.writeByte(1);
                 System.out.println("Введите жанр этого фильма => ");
                 genre = scanner.next();
                 randomAccessFile.writeUTF(genre);
                 for (int l=0;l<20-genre.length();l++)
-                    randomAccessFile.writeByte(0);
+                    randomAccessFile.writeByte(1);
                 System.out.println("Введите стоимость проката данного фильма (в млн.) => ");
                 rentalCost = scanner.nextInt();
-                randomAccessFile.writeLong(rentalCost);
+                randomAccessFile.writeInt(rentalCost);
                 scanner.nextLine();
             }
             randomAccessFile.close();
@@ -53,7 +56,9 @@ public class RndAccFilms {
                 name = randomAccessFile.readUTF();
                 for (int j = 0;j<20-name.length();j++)
                     randomAccessFile.readByte();
-                year = randomAccessFile.readInt();
+                year = randomAccessFile.readUTF();
+                for (int m=0;m<20-year.length();m++)
+                    randomAccessFile.readByte();
                 country=randomAccessFile.readUTF();
                 for (int k=0;k<20-country.length();k++)
                     randomAccessFile.readByte();
@@ -62,9 +67,9 @@ public class RndAccFilms {
                     randomAccessFile.readByte();
                 rentalCost=randomAccessFile.readInt();
                 System.out.println(name+"\t\t\t"+year+"\t\t\t"+country+"\t\t\t"+genre+"\t\t\t"+rentalCost);
+
             }
             randomAccessFile.close();
-
         }
         catch (IOException e){
             System.out.println(e.getMessage());
