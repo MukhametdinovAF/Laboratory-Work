@@ -1,5 +1,7 @@
 package CourseWork.test;
 
+
+
 import java.util.Arrays;
 import java.util.Scanner;
 import java.time.*;
@@ -37,80 +39,117 @@ public class ArraySortApp {
                         sortingMethod = in.nextInt();
                     }
                     switch (sortingMethod) {
-                        case 1:
+                        case 1 -> {
                             long[] arrayCopy1 = Arrays.copyOf(arrayCopy, arrayCopy.length);
                             Instant startBub = Instant.now();
                             ArrayBub.bubbleSort(arrayCopy1);
                             Instant stopBub = Instant.now();
-                            long elapsedBub = Duration.between(startBub,stopBub).toMillis();
+                            long elapsedBub = Duration.between(startBub, stopBub).toMillis();
                             System.out.println("Отсортированный массив выглядит следующим образом:");
                             ri.display(arrayCopy1);
-                            System.out.println("Время работы алгоритма сортировки составляет " +elapsedBub+" миллисекунд");
-                            System.out.println("Записать в файл отсортированный массив?(да/нет)");
+                            System.out.println("Время работы алгоритма сортировки составляет " + elapsedBub + " миллисекунд");
+                            System.out.println("Записать результат работы алгоритма в файл?(да/нет)");
                             answer = in.nextLine();
-                            if (answer.equals("да")) {
+                            if (answer.equals("да")||answer.equals("lf")||answer.equals("yes")||answer.equals("Да")) {
                                 ArrayBub.WriteToTxtUnsorted(arrayCopy);
                                 ArrayBub.WriteToTxtSorted(arrayCopy1);
-                                System.out.println("Хотите выбрать другой метод сортировки?(да/нет)");
+                                System.out.println("Хотите отсортировать этот же массив случайных чисел другим методом?(да/нет)");
                                 answer = in.nextLine();
-                                if (answer.equals("да")) {
-                                    break;
-                                }else {
-                                    System.out.println("Тогда попробуйте отсортировать другое количество чисел");
-                                    sorting=false;
-                                }
+                            } else {
+                                System.out.println("Хотите отсортировать этот же массив случайных чисел другим методом?(да/нет)");
+                                answer = in.nextLine();
                             }
-                            break;
-                        case 2:
+                            if (answer.equals("да")||answer.equals("lf")||answer.equals("yes")||answer.equals("Да")) {
+                                break;
+                            } else {
+                                System.out.println("Хотите завершить?(да/нет)");
+                                answer = in.nextLine();
+                                switch (answer) {
+                                    case "да":finish = false;
+                                    case "нет":break;
+                                    case "lf":finish = false;
+                                    case "yes":finish = false;
+                                    case "ytn":break;
+                                }
+
+                                sorting = false;
+
+                            }
+                        }
+                        case 2 -> {
                             long[] arrayCopy2 = Arrays.copyOf(arrayCopy, arrayCopy.length);
                             Instant startIns = Instant.now();
                             ArrayIns.insertionSort(arrayCopy2);
                             Instant stopIns = Instant.now();
-                            long elapsedIns=Duration.between(startIns,stopIns).toMillis();
+                            long elapsedIns = Duration.between(startIns, stopIns).toMillis();
                             System.out.println("Отсортированный массив выглядит следующим образом:");
                             ri.display(arrayCopy2);
-                            System.out.println("Время работы алгоритма сортировки составляет " +elapsedIns+" миллисекунд");
-                            System.out.println("Записать в файл отсортированный массив?(да/нет)");
+                            System.out.println("Время работы алгоритма сортировки составляет " + elapsedIns + " миллисекунд");
+                            System.out.println("Записать результат работы алгоритма в файл?(да/нет)");
                             answer = in.nextLine();
-                            if (answer.equals("да")) {
+                            if (answer.equals("да")||answer.equals("lf")||answer.equals("yes")||answer.equals("Да")) {
                                 ArrayIns.WriteToTxtUnsorted(arrayCopy);
                                 ArrayIns.WriteToTxtSorted(arrayCopy2);
-                                System.out.println("Хотите выбрать другой метод сортировки?(да/нет)");
+                                System.out.println("Хотите отсортировать этот же массив случайных чисел другим методом?(да/нет)");
                                 answer = in.nextLine();
-                                if (answer.equals("да")) {
-                                    break;
-                                }
                             } else {
-                                System.out.println("Тогда попробуйте отсортировать другое количество чисел");
-                                sorting=false;
+                                System.out.println("Хотите отсортировать этот же массив случайных чисел другим методом?(да/нет)");
+                                answer = in.nextLine();
                             }
-                            break;
-                        case 3:
+                            if (answer.equals("да")||answer.equals("lf")||answer.equals("yes")||answer.equals("Да")) {
+                                break;
+                            } else {
+                                System.out.println("Хотите завершить?(да/нет)");
+                                answer = in.nextLine();
+                                switch (answer) {
+                                    case "да":finish = false;
+                                    case "нет":break;
+                                    case "lf":finish = false;
+                                    case "yes":finish = false;
+                                    case "ytn":break;
+
+                                }
+                                sorting = false;
+
+                            }
+                        }
+                        case 3 -> {
                             long[] arrayCopy3 = Arrays.copyOf(arrayCopy, arrayCopy.length);
                             Instant startSel = Instant.now();
                             ArraySel.selectionSort(arrayCopy3);
                             Instant stopSel = Instant.now();
-                            long elapsedSel=Duration.between(startSel,stopSel).toMillis();
+                            long elapsedSel = Duration.between(startSel, stopSel).toMillis();
                             System.out.println("Отсортированный массив выглядит следующим образом:");
                             ri.display(arrayCopy3);
-                            System.out.println("Время работы алгоритма сортировки составляет " +elapsedSel+" миллисекунд");
-                            System.out.println("Записать в файл отсортированный массив?(да/нет)");
+                            System.out.println("Время работы алгоритма сортировки составляет " + elapsedSel + " миллисекунд");
+                            System.out.println("Записать результат работы алгоритма в файл?(да/нет)");
                             answer = in.nextLine();
-                            if (answer.equals("да")) {
+                            if (answer.equals("да")||answer.equals("lf")||answer.equals("yes")||answer.equals("Да")) {
                                 ArraySel.WriteToTxtUnsorted(arrayCopy);
                                 ArraySel.WriteToTxtSorted(arrayCopy3);
-                                System.out.println("Хотите выбрать другой метод сортировки?(да/нет)");
+                                System.out.println("Хотите отсортировать этот же массив случайных чисел другим методом?(да/нет)");
                                 answer = in.nextLine();
-                                if (answer.equals("да")) {
-                                    break;
-                                }
                             } else {
-                                System.out.println("Тогда попробуйте отсортировать другое количество чисел");
-                                sorting=false;
+                                System.out.println("Хотите отсортировать этот же массив случайных чисел другим методом?(да/нет)");
+                                answer = in.nextLine();
                             }
-                            break;
-                    }
+                            if (answer.equals("да")||answer.equals("lf")||answer.equals("yes")||answer.equals("Да")) {
+                                break;
+                            } else {
+                                System.out.println("Хотите завершить?(да/нет)");
+                                answer = in.nextLine();
+                                switch (answer) {
+                                    case "да":finish = false;
+                                    case "нет":break;
+                                    case "lf":finish = false;
+                                    case "yes":finish = false;
+                                    case "ytn":break;
+                                }
+                                sorting = false;
 
+                            }
+                        }
+                    }
                 }
             }
             catch (InputMismatchException e){

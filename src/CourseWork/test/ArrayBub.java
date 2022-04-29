@@ -28,7 +28,6 @@ public class ArrayBub {
     }
     public static void WriteToTxtUnsorted(long[]array) {
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\ekb-l\\IdeaProjects\\Laboratory-Work\\src\\CourseWork\\test\\Result",false)))) {
-            writer.write("\n"+" ");
             writer.write("Массив до сортировки:");
             writer.write("\n");
             for (int i = 0; i < array.length; i++) {
