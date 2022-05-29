@@ -13,7 +13,7 @@ public class Rec5 {
     }
 
     public static void main(String[] args) {
-        System.out.println(f(20));
+        System.out.println(f(12));
     }
 }
 
