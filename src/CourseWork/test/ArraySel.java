@@ -7,14 +7,6 @@ import java.io.OutputStreamWriter;
 
 
 public class ArraySel {
-//    private long[] array; // Ссылка на массив a
-//    private int length; // Количество элементов данных
-//
-//    public ArraySel(int max) // Конструктор
-//    {
-//        array = new long[max]; // Создание массива
-//        length = 0; // Пока нет ни одного элемента
-//    }
     public static void selectionSort(long[] array) {
         int out, in, min;
         for (out = 0; out < array.length - 1; out++) // Внешний цикл

@@ -7,13 +7,6 @@ import java.io.OutputStreamWriter;
 
 
 public class ArrayBub {
-//    private long[] array; // Ссылка на массив a
-//    private int length; // Количество элементов данных
-//    public ArrayBub(int max) // Конструктор
-//    {
-//        array = new long[max]; // Создание массива
-//        length = 0; // Пока нет ни одного элемента
-//    }
     public static void bubbleSort(long [] array) {
         int out, in;
         long temp = 0;
