@@ -1,4 +1,4 @@
-package CourseWork.test;
+package CourseWork.release;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
