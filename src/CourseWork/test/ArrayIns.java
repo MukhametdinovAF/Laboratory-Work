@@ -7,14 +7,14 @@ import java.io.OutputStreamWriter;
 
 
 public class ArrayIns {
-    private long[] array; // Ссылка на массив a
-    private int length; // Количество элементов данных
-
-    public ArrayIns(int max) // Конструктор
-    {
-        array = new long[max]; // Создание массива
-        length = 0; // Пока нет ни одного элемента
-    }
+//    private long[] array; // Ссылка на массив a
+//    private int length; // Количество элементов данных
+//
+//    public ArrayIns(int max) // Конструктор
+//    {
+//        array = new long[max]; // Создание массива
+//        length = 0; // Пока нет ни одного элемента
+//    }
     public static void insertionSort(long[]array)
     {
         int in, out;
