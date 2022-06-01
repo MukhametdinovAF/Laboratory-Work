@@ -19,7 +19,7 @@ public class ArrayBub {
                     array[in + 1] = temp; // Поменять местами
                 }
     }
-    public static void WriteToTxtUnsorted(long[]array) {
+    public static void writeToTxtUnsorted(long[]array) {
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\ekb-l\\IdeaProjects\\Laboratory-Work\\src\\CourseWork\\test\\Result",false)))) {
             writer.write("Массив до сортировки:");
             writer.write("\n");
@@ -32,7 +32,7 @@ public class ArrayBub {
         }
     }
 
-    public static void WriteToTxtSorted(long[]array){
+    public static void writeToTxtSorted(long[]array){
         try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\ekb-l\\IdeaProjects\\Laboratory-Work\\src\\CourseWork\\test\\Result",true)))){
             writer.write("\n"+" ");
             writer.write("\nМассив после сортировки:");

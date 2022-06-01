@@ -51,8 +51,8 @@ public class ArraySortApp {
                             System.out.println("Записать результат работы алгоритма в файл?(да/нет)");
                             answer = in.nextLine();
                             if (answer.equals("да")||answer.equals("lf")||answer.equals("yes")||answer.equals("Да")) {
-                                ArrayBub.WriteToTxtUnsorted(arrayCopy);
-                                ArrayBub.WriteToTxtSorted(arrayCopy1);
+                                ArrayBub.writeToTxtUnsorted(arrayCopy);
+                                ArrayBub.writeToTxtSorted(arrayCopy1);
                                 System.out.println("Хотите отсортировать этот же массив случайных чисел другим методом?(да/нет)");
                                 answer = in.nextLine();
                             } else {
@@ -88,8 +88,8 @@ public class ArraySortApp {
                             System.out.println("Записать результат работы алгоритма в файл?(да/нет)");
                             answer = in.nextLine();
                             if (answer.equals("да")||answer.equals("lf")||answer.equals("yes")||answer.equals("Да")) {
-                                ArrayIns.WriteToTxtUnsorted(arrayCopy);
-                                ArrayIns.WriteToTxtSorted(arrayCopy2);
+                                ArrayIns.writeToTxtUnsorted(arrayCopy);
+                                ArrayIns.writeToTxtSorted(arrayCopy2);
                                 System.out.println("Хотите отсортировать этот же массив случайных чисел другим методом?(да/нет)");
                                 answer = in.nextLine();
                             } else {
@@ -125,8 +125,8 @@ public class ArraySortApp {
                             System.out.println("Записать результат работы алгоритма в файл?(да/нет)");
                             answer = in.nextLine();
                             if (answer.equals("да")||answer.equals("lf")||answer.equals("yes")||answer.equals("Да")) {
-                                ArraySel.WriteToTxtUnsorted(arrayCopy);
-                                ArraySel.WriteToTxtSorted(arrayCopy3);
+                                ArraySel.writeToTxtUnsorted(arrayCopy);
+                                ArraySel.writeToTxtSorted(arrayCopy3);
                                 System.out.println("Хотите отсортировать этот же массив случайных чисел другим методом?(да/нет)");
                                 answer = in.nextLine();
                             } else {

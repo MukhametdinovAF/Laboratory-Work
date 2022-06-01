@@ -22,7 +22,7 @@ public class ArrayIns {
             array[in] = temp; // Вставить помеченный элемент
         }
     }
-    public static void WriteToTxtUnsorted(long[]array) {
+    public static void writeToTxtUnsorted(long[]array) {
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\ekb-l\\IdeaProjects\\Laboratory-Work\\src\\CourseWork\\test\\Result",false)))) {
             writer.write("\n"+" ");
             writer.write("Массив до сортировки:");
@@ -36,7 +36,7 @@ public class ArrayIns {
         }
     }
 
-    public static void WriteToTxtSorted(long[]array){
+    public static void writeToTxtSorted(long[]array){
         try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\ekb-l\\IdeaProjects\\Laboratory-Work\\src\\CourseWork\\test\\Result",true)))){
             writer.write("\n"+" ");
             writer.write("\nМассив после сортировки:");
